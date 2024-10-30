@@ -1,0 +1,108 @@
+﻿@model Pizza.PL.Areas.dashboard.ViewModels.burger.BurgerFormViewModel
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section Header {
+     Burger
+}
+<div class="container">
+
+
+    <div class="card card-success pb-3">
+        <div class="card-header">
+            <h3 class="card-title">
+                Create Burger
+            </h3>
+        </div>
+        <div class=" d-flex justify-content-between align-items-center">
+            <div class="col-md-6">
+
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="BurgerForm" asp-controller="Burger" asp-action="Create" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label asp-for="Name"></label>
+                            <input class="form-control" placeholder="Enter Name" asp-for="Name">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Description"></label>
+                            <input class="form-control" asp-for="Description" placeholder="Enter Description">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Price"></label>
+                            <input class="form-control" asp-for="Price" placeholder="Enter Price">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Image"></label>
+                            <input asp-for="Image" class="form-control-file imgInput">
+                        </div>
+                        <div class="form-group">
+                            <img src="#" id="imgPreview" style="display:none" class="border border-success" width="120px" height="120px" />
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+
+                </form>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <img src="~/dashboard/image/resturentGifForService.gif" alt="resturent Gif For Service" />
+            </div>
+        </div>
+
+
+    </div>
+</div>
+@section scripts {
+    <script>
+        //to preview img
+        document.querySelector(".imgInput").addEventListener("change", (event) => {
+            const file = event.target.files[0];
+            const imgPreview = document.querySelector("#imgPreview");
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    imgPreview.src = e.target.result;
+                    imgPreview.style.display = "block";
+                }
+                reader.readAsDataURL(file);
+            }
+
+        });
+
+        //to handle submit
+            $(document).ready(function () {
+            $('#BurgerForm').submit(function (event) {
+                    event.preventDefault(); // Prevent the default form submission
+
+                    // Create FormData object to handle file upload with other data
+                    var formData = new FormData(this);
+
+                    $.ajax({
+                        url: $(this).attr('action'), // Get form action URL
+                        type: $(this).attr('method'), // Get form method (usually POST)
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (response) {
+                            toastr.success('Service added successfuly!', 'Great Job!');
+                        setTimeout(function () {
+                            window.location.href = '/dashboard/Burger/Index'; // Update this path to your actual index URL
+                        }, 1500);
+                    },
+                        error: function () {
+                            // Show an error alert if something went wrong
+                        toastr.error('something went error.', 'Unfortunately!')
+                        }
+                    });
+                });
+            });
+    
+    </script>
+}

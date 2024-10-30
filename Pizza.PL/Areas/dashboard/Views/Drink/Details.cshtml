@@ -1,0 +1,31 @@
+﻿@model Pizza.PL.Areas.dashboard.ViewModels.drink.DrinkDetails
+@section Header {
+    Drink
+}
+<div class="card card-info w-75">
+    <div class="card-header">
+        <h3 class="card-title">@Model.Name</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="d-flex">
+          <div class="col-md-6">
+                <ul>
+                    <li><span class="text-info">Status:</span>@(Model.IsDeleted ? "Deleted" : "Active")</li>
+                    <li><span class="text-info">Description: </span>@Model.Description</li>
+                    <li><span class="text-info">Price: </span>@Model.Price</li>
+                    <li><span class="text-info">Created At:</span>@Model.CreatedAt</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+
+                <img src="~/files/img/@Model.ImgName" alt="service img" class="rounded-circle w-25 border border-info accent-dark" width="120px" height="120px" />
+            </div>
+      </div>
+              
+        
+    </div>
+    <div class="card-footer card-info"></div>
+</div>
+
+

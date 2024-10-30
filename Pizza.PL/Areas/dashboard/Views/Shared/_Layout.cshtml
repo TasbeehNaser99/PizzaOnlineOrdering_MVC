@@ -6,6 +6,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 <head>
  <partial name="_head"/>
+   
+ @RenderSection("style",required:false)
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -75,5 +77,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="~/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="~/dashboard/js/adminlte.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+    
 </body>
 </html>

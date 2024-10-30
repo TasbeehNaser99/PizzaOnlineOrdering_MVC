@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Pizza.PL.Data;
+using Pizza.DAL.Data;
+using Pizza.PL.Mapping;
+using System.Reflection;
+
 
 namespace Pizza.PL
 {
@@ -19,7 +22,7 @@ namespace Pizza.PL
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(MappingProfile)));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -40,14 +43,14 @@ namespace Pizza.PL
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.MapControllerRoute(
+             name: "areas",
+             pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+              );
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-            app.MapControllerRoute(
-              name: "areas",
-              pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-               );
+           
             app.MapRazorPages();
 
             app.Run();
