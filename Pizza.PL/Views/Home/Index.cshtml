@@ -1,8 +1,520 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model dynamic
+@section style{
+    <link rel="stylesheet" href="~/web/assets/css/style.css">
+    <link rel="stylesheet" href="~/web/assets/css/responseStyle.css">
 }
+<header>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="first-bg vh-120">
+                    <div class="container">
+                        <div class="row justify-content-center align-items-center vh-120">
+                            <div class="col-md-6">
+                                <div class="content text-end">
+                                    <span class>Delicious</span>
+                                    <h1 class="mb-4 text-white">Italian Cuizine</h1>
+                                    <p class="para mb-5 text-white">
+                                        A small river named Duden flows by their place and supplies it with the
+                                        necessary regelialia.
+                                    </p>
+                                    <a class="button0 mt-4" href="#">Order Now</a>
+                                    <a class="button1 mt-4" href="menu.html">View Menu</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="  text-center">
+                                    <img src="~/web/assets/img/header/bg_1.png" alt="pizza" class="w-85">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="first-bg vh-120">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row justify-content-center align-items-center vh-120">
+                            <div class="col-md-6">
+                                <div class="text-center">
+                                    <img src="~/web/assets/img/header/bg_2.png" alt="pizza" class="w-85">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="content text-start">
+                                    <span class>Delicious</span>
+                                    <h1 class="mb-4 text-white">Italian Cuizine</h1>
+                                    <p class="para mb-5 text-white">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                                    <a class="button0 mt-4" href="#">Order Now</a>
+                                    <a class="button1 mt-4" href="menu.html">View Menu</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="second-bg vh-120">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="d-flex justify-content-center align-items-center vh-120">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+                            <div class="content text-center">
+                                <span class>Welcome</span>
+                                <h1 class="mb-4 text-white">WE COOKER YOUR DESIRED<br> PIZZA RECIPE</h1>
+                                <p class="para mb-5 text-white">A small river named Duden flows by their place and supplies<br> it with the necessary regelialia.</p>
+                                <a class="button0 mt-4" href="#">Order Now</a>
+                                <a class="button1 mt-4" href="menu.html">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</header>
+<section class="contact0 ">
+    <div class="row">
+        <div class="col-md-8 info p-4 pt-5 ps-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 d-flex contact_content wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                        <span class="icon-phone pe-2"><i class="fa-solid fa-phone"></i></span>
+                        <div>
+                            <h3>000 (123) 456 7890</h3>
+                            <p>A small river named Duden flows</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex contact_content wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                        <span class="icon-my_location pe-2"><i class="fa-solid fa-location-crosshairs"></i></span>
+                        <div>
+                            <h3>198 West 21th Street</h3>
+                            <p>Suite 721 New York NY 10016</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex contact_content wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                        <span class="icon-clock-o pe-2"><i class="fa-regular fa-clock"></i></span>
+                        <div>
+                            <h3>Open Monday-Friday</h3>
+                            <p>8:00am - 9:00pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 icon">
+            <div class="container">
+                <div class="d-flex  align-items-center p-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="welcome">
+    <div class="row">
+        <div class="col-md-6 c1">
+            <div class="img ">
+                <img src="~/web/assets/img/about.jpg" alt="resturent photo" />
+            </div>
+        </div>
+        <div class="col-md-6 welcome-resturent d-flex align-items-center">
+            <div class="container ps-5">
+                <h2 class="text-white ps-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">WELCOME TO <span><img src="~/web/assets/img/Capture.PNG" alt="pizza logo" /> PIZZA</span>  A RESTAURANT</h2>
+                <p class="ps-5">On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services py-5">
+    <div class="container text-center py-5 wow bounceInUp" data-wow-duration="1s" data-wow-offset="150">
+        <h2 class="pt-5">OUR SERVICES</h2>
+        <p>
+            Far far away, behind the word mountains, far from the countries Vokalia and
+            <br>Consonantia, there live the blind texts.
+        </p>
+    </div>
+    <div class="row align-items-center content-0 justify-content-center py-5 wow bounceInUp" data-wow-duration="1s" data-wow-offset="150">
+        @foreach (var item in Model.service)
+        {
+            <div class="col-md-3  text-center pizza-sec ">
+                <div class="position-relative ">
+                    <div class="customer-icon0 position-relative position-absolute">
+                        <img src="~/files/img/@item.ImgName" alt="pizza" />
+                    </div>
+                    <div class="icon-content0 position-relative mb-3 "></div>
+                </div>
+                <h3 class="pt-4">@item.Name</h3>
+                <p class="pt-4">
+                   @item.Description
+                </p>
+            </div>
+        }
+    </div>
+
+</section>
+<section class="pizza-meal text-center wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+    <h2 class="text-white pt-5 pb-3">HOT PIZZA MEALS</h2>
+    <p>
+        Far far away, behind the word mountains, far from the countries Vokalia and<br> Consonantia, there live the blind
+        texts.
+    </p>
+    <div class="row pt-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+        @for (int i = 0; i < 3; i++)
+        {
+            var item = Model.pizza8[i];
+            <div class="col-md-2 type-1 type-0" style="background-image: url('/files/img/@item.ImgName')">
+            </div>
+        <div class="col-md-2 text-start content-1">
+            <div class="container-fluid">
+                <h3 class="text-white ">@item.Name</h3>
+                <p>@item.Description</p>
+                <div>
+                    <span>@item.Price $</span>
+                    <a href="#" class="button">Order</a>
+                </div>
+            </div>
+        </div>}
+     
+        @for (int i = 3; i < 6; i++)
+            {
+                var item = Model.pizza8[i];
+        <div class="col-md-2 text-start ps-3 content-1">
+            <div class="container-fluid">
+                    <h3 class="text-white ">@item.Name</h3>
+                    <p>@item.Description</p>
+                <div>
+                        <span>@item.Price $</span>
+                    <a href="#" class="button">Order</a>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-2 type-4 type-0" style="background-image: url('/files/img/@item.ImgName')">
+        </div>
+        
+          }
+    
+    </div>
+</section>
+<section class="menu text-center py-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+    <h2 class="text-white">OUR MENU PRICING</h2>
+    <p class="line p-3">
+        <span class="deg1"></span>
+        <span class="deg2"></span>
+        <span class="deg3"></span>
+    </p>
+    <p class="pb-5">Far far away, behind the word mountains, far from the countries Vokalia and<br> Consonantia, there live the blind texts.</p>
+    <div class="container0 py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                  @for (int i = 0; i < 4; i++)
+            {
+                var item = Model.pizza8[i];
+                <div class="item d-flex align-items-center pt-3">
+                        <div class="img type-1" style="background-image: url('/files/img/@item.ImgName')"></div>
+                    <div class="ps-2">
+                        <div class="d-flex pt-4 menu-li">
+                            <h3 class="px-2 text-start">@item.Name</h3>
+                            <span class="price px-2 text-end">@item.Price $</span>
+                        </div>
+                        <p class=" para-0">A small river named Duden flows by their place and supplies</p>
+                    </div>
+                </div>
+                }
+               
+            </div>
+            <div class="col-lg-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                @for (int i = 4; i < 8; i++)
+                {
+                    var item = Model.pizza8[i];
+                    <div class="item d-flex align-items-center pt-3">
+                        <div class="img type-1" style="background-image: url('/files/img/@item.ImgName')"></div>
+                        <div class="ps-2">
+                            <div class="d-flex pt-4 menu-li">
+                                <h3 class="px-2 text-start">@item.Name</h3>
+                                <span class="price px-2 text-end">@item.Price $</span>
+                            </div>
+                            <p class=" para-0">A small river named Duden flows by their place and supplies</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="customer  position-relative">
+    <div class="row wow slideInLeft" data-wow-duration="2s" data-wow-offset="150">
+        <div class="col-md-3 p-0">
+            <div class="gallery1 d-flex justify-content-center align-items-center position-relative">
+                <div class="overlay">
+                    <a href="" class="zoom " count="1"><i class="fa-solid fa-magnifying-glass position-absolute"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-0">
+            <div class="gallery2 d-flex justify-content-center align-items-center position-relative">
+                <div class="overlay">
+                    <a href="" class="zoom " count="2"><i class="fa-solid fa-magnifying-glass position-absolute"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-0">
+            <div class="gallery3 d-flex justify-content-center align-items-center position-relative">
+                <div class="overlay">
+                    <a href="" class="zoom " count="3"><i class="fa-solid fa-magnifying-glass position-absolute"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-0">
+            <div class="gallery4 d-flex justify-content-center align-items-center position-relative">
+                <div class="overlay">
+                    <a href="" class="zoom" count="4"><i class="fa-solid fa-magnifying-glass position-absolute"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fullImgView" class="d-flex  fullImgView justify-content-center d-none align-items-center z-2">
+        <img id="fullImg" />
+    </div>
+    <div class="happy-customer py-5 text-center ">
+        <div class="container ">
+            <div class="row justify-content-center align-items-center py-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                <div class="col-md-2  text-center full-case">
+                    <div class="position-relative ">
+                        <div class="w-20 customer-icon position-relative position-absolute ">
+                            <img src="~/web/assets/img/icon/pizza1.png" alt="pizza" />
+                        </div>
+                        <div class="icon-content position-relative mb-3"></div>
+                    </div>
+                    <span class="number py-5 counter">100</span><br>
+                    <span class="comment-0">Pizza Branches</span>
+                </div>
+                <div class="col-md-2 full-case text-center">
+                    <div class="position-relative ">
+                        <div class="w-20 customer-icon position-absolute position-relative">
+                            <img src="~/web/assets/img/icon/icons8-medal-48 (1).png" alt="pizza" />
+                        </div>
+                        <div class="icon-content position-relative mb-3"></div>
+                    </div>
+                    <span class="number py-5 counter">85</span><br>
+                    <span class="comment-0">Number of Awards</span>
+                </div>
+                <div class="col-md-2 full-case text-center">
+                    <div class="position-relative">
+                        <div class="w-20 customer-icon position-absolute position-relative">
+                            <img src="~/web/assets/img/icon/friends.png" alt="pizza" />
+                        </div>
+                        <div class="icon-content mb-3 position-relative"></div>
+                    </div>
+                    <span class="number py-5 counter">1057 </span><br>
+                    <span class="comment-0">Happy Customer</span>
+                </div>
+                <div class="col-md-2 full-case text-center">
+                    <div class="position-relative">
+                        <div class="w-20 customer-icon position-absolute position-relative">
+                            <img src="~/web/assets/img/icon/chef-hat.png" alt="pizza" />
+                        </div>
+                        <div class="icon-content mb-3 position-relative "></div>
+                    </div>
+                    <span class="number py-5 counter">900</span><br>
+                    <span class="comment-0">Staff</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="add-to-cart">
+
+    <div class="row">
+        <div class="col-md-4 p-0">
+            <div class="desc wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+            </div>
+        </div>
+        <div class="col-md-8 sub-add-to-card">
+            <div class="container">
+                <ul class="nav nav-0  mb-3 pt-5 ps-5 wow bounceInUp" id="pills-tab" role="tablist" data-wow-duration="2s" data-wow-offset="150">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Pizza</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Drinks</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Burgers</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-pasta-tab" data-bs-toggle="pill" data-bs-target="#pills-pasta" type="button" role="tab" aria-controls="pills-pasta" aria-selected="false">Pasta</button>
+                    </li>
+
+                </ul>
+                <div class="tab-content pt-4" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                        <div class="row tab-nav">
+                            @for (int i = 0; i < 3; i++)
+                            {
+                                var item = Model.pizza8[i];
+                                <div class="col-md-4 text-center wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                                    <div class="pizza-img type-1 ms-5 " style="background-image: url('/files/img/@item.ImgName')">
+                                    </div>
+                                    <h3 class="text-white mt-3">@item.Name</h3>
+                                    <p>@item.Description</p>
+                                    <span class="span">@item.Price $</span>
+                                    <div class="mt-4">
+                                        <a href="#" class="button1 btn-add px-3 py-2">Add to card</a>
+                                    </div>
+
+                                </div>
+                            }       
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                        <div class="row tab-nav">
+                              @foreach(var item in Model.drink)
+                            {
+                               
+                            <div class="col-md-4 text-center ">
+                                <div class="pizza-img drink1 ms-5"  style="background-image: url('/files/img/@item.ImgName')">
+                                </div>
+                                <h3 class="text-white mt-3">@item.Name</h3>
+                                <p>@item.Description</p>
+                                <span class="span">@item.Price $</span>
+                                <div class="mt-4">
+                                    <a href="#" class="button1 btn-add px-3 py-2">Add to card</a>
+                                </div>
+
+                            </div>
+                         
+                          
+                            }
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        <div class="row tab-nav">
+                              @foreach(var item in Model.burger)
+                            {
+                            <div class="col-md-4 text-center ">
+                                <div class="pizza-img burger1 ms-5 " style="background-image: url('/files/img/@item.ImgName')">
+                                </div>
+                                <h3 class="text-white mt-3">@item.Name</h3>
+                                <p>@item.Description</p>
+                                <span class="span">@item.Price $</span>
+                                <div class="mt-4">
+                                    <a href="#" class="button1 btn-add px-3 py-2">Add to card</a>
+                                </div>
+
+                            </div>
+                            }
+                       
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-pasta" role="tabpanel" aria-labelledby="pills-pasta-tab" tabindex="0">
+                        <div class="row tab-nav">
+                              @foreach(var item in Model.pasta)
+                            {
+                            <div class="col-md-4 text-center ">
+                                <div class="pizza-img pasta1 ms-5" style="background-image: url('/files/img/@item.ImgName')">
+                                </div>
+                                <h3 class="text-white mt-3">@item.Name</h3>
+                                    <p>@item.Description</p>
+                                <span class="span">@item.Price $</span>
+                                <div class="mt-4">
+                                    <a href="#" class="button1 btn-add px-3 py-2">Add to card</a>
+                                </div>
+
+                            </div>
+                             }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="blog text-center py-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+    <div class="container py-5">
+        <h2 class="text-white">RECENT FROM BLOG</h2>
+        <p>
+            Far far away, behind the word mountains, far from the countries Vokalia and<br> Consonantia, there live the blind
+            texts.
+        </p>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 text-start py-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                    <div class="img-blog img1"></div>
+                    <div class="d-flex comment py-3">
+                        <a href="#">Sept 10, 2018</a>
+                        <a href="#" class="ps-1">Admin</a>
+                        <a href="#" class="ps-1">
+                            <i class="fa-regular fa-message"></i> 3
+                        </a>
+                    </div>
+                    <h3><a href="#" class="h3-blog">The Delicious Pizza</a></h3>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                </div>
+                <div class="col-md-4 text-start py-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                    <div class="img-blog img2"></div>
+                    <div class="d-flex comment py-3">
+                        <a href="#">Sept 10, 2018</a>
+                        <a href="#" class="ps-1">Admin</a>
+                        <a href="#" class="ps-1">
+                            <i class="fa-regular fa-message"></i> 3
+                        </a>
+                    </div>
+                    <h3><a href="#" class="h3-blog">The Delicious Pizza</a></h3>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                </div>
+                <div class="col-md-4 text-start py-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                    <div class="img-blog img3"></div>
+                    <div class="d-flex comment py-3">
+                        <a href="#">Sept 10, 2018</a>
+                        <a href="#" class="ps-1">Admin</a>
+                        <a href="#" class="ps-1">
+                            <i class="fa-regular fa-message"></i> 3
+                        </a>
+                    </div>
+                    <h3><a href="#" class="h3-blog">The Delicious Pizza</a></h3>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact">
+    <div class="row">
+        <div class="col-md-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13479.322905233028!2d35.08283774853281!3d32.370086204805794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d1a50888200f9%3A0x60d6a4b808cbb6bc!2z2LnYqtmK2YQ!5e0!3m2!1sar!2s!4v1693858886456!5m2!1sar!2s" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="col-md-6 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+            <div class="container w-75 ms-5">
+                <h2 class="text-white pb-3 pt-5">Contcat Us</h2>
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control p-3 bg-transparent text-white border-0" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="First Name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control p-3 bg-transparent  text-white border-0" id="exampleInputPassword1" placeholder="Last Name">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control bg-transparent  border-0  rounded-0 text-white" placeholder="Message.." id="floatingTextarea2" style="height: 100px"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,22 @@
+﻿@model Pizza.PL.Areas.dashboard.ViewModels.Account.LoginViewModel
+@section Header {
+   Login
+}
+<form asp-action="Login">
+    <div>
+        <label>Username</label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div>
+        <label>Password</label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label>Remember Me</label>
+        <input asp-for="RememberMe" type="checkbox" />
+    </div>
+    <button type="submit">Login</button>
+</form>
+

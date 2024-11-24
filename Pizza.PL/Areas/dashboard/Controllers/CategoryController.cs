@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Pizza.PL.Areas.dashboard.Controllers
 {
+    [Authorize]
     [Area("dashboard")]
     public class CategoryController : Controller
     {

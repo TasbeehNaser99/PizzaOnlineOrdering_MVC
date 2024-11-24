@@ -1,0 +1,209 @@
+﻿@model dynamic
+@section style {
+    <link rel="stylesheet" href="~/web/assets/css/menu.css">
+    <link rel="stylesheet" href="~/web/assets/css/responseMenu.css">
+}
+<header class="vh-110 d-flex justify-content-center align-items-center">
+    <div class="text-center">
+        <h1 class="text-white wow bounceInUp" data-wow-duration="3s" data-wow-offset="150">OUR MENU</h1>
+        <a href="index.html">HOME</a>
+        <a class="menu-link">MENU</a>
+    </div>
+</header>
+<section class="pizza-meal text-center wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+    <h2 class="text-white pt-5 pb-3">HOT PIZZA MEALS</h2>
+    <p>
+        Far far away, behind the word mountains, far from the countries Vokalia and<br> Consonantia, there live the blind
+        texts.
+    </p>
+    <div class="row pt-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+        @for (int i = 0; i < 3; i++)
+        {
+            var item = Model.pizza8[i];
+            <div class="col-md-2 type-1 type-0" style="background-image: url('/files/img/@item.ImgName')">
+            </div>
+            <div class="col-md-2 text-start content-1">
+                <div class="container-fluid">
+                    <h3 class="text-white ">@item.Name</h3>
+                    <p>@item.Description</p>
+                    <div>
+                        <span>@item.Price $</span>
+                        <a href="#" class="button">Order</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @for (int i = 3; i < 6; i++)
+        {
+            var item = Model.pizza8[i];
+            <div class="col-md-2 text-start ps-3 content-1">
+                <div class="container-fluid">
+                    <h3 class="text-white ">@item.Name</h3>
+                    <p>@item.Description</p>
+                    <div>
+                        <span>@item.Price $</span>
+                        <a href="#" class="button">Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 type-4 type-0" style="background-image: url('/files/img/@item.ImgName')">
+            </div>
+
+        }
+
+    </div>
+</section>
+<section class="menu text-center py-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+    <h2 class="text-white">OUR MENU PRICING</h2>
+    <p class="line p-3">
+        <span class="deg1"></span>
+        <span class="deg2"></span>
+        <span class="deg3"></span>
+    </p>
+    <p class="pb-5">Far far away, behind the word mountains, far from the countries Vokalia and<br> Consonantia, there live the blind texts.</p>
+    <div class="container0 py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                @for (int i = 0; i < 4; i++)
+                {
+                    var item = Model.pizza8[i];
+                    <div class="item d-flex align-items-center pt-3">
+                        <div class="img type-1" style="background-image: url('/files/img/@item.ImgName')"></div>
+                        <div class="ps-2">
+                            <div class="d-flex pt-4 menu-li">
+                                <h3 class="px-2 text-start">@item.Name</h3>
+                                <span class="price px-2 text-end">@item.Price $</span>
+                            </div>
+                            <p class=" para-0">A small river named Duden flows by their place and supplies</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="col-lg-5 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                @for (int i = 4; i < 8; i++)
+                {
+                    var item = Model.pizza8[i];
+                    <div class="item d-flex align-items-center pt-3">
+                        <div class="img type-1" style="background-image: url('/files/img/@item.ImgName')"></div>
+                        <div class="ps-2">
+                            <div class="d-flex pt-4 menu-li">
+                                <h3 class="px-2 text-start">@item.Name</h3>
+                                <span class="price px-2 text-end">@item.Price $</span>
+                            </div>
+                            <p class=" para-0">A small river named Duden flows by their place and supplies</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="add-to-cart">
+    <div class="row">
+        <div class="col-md-4 p-0">
+            <div class="desc wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+            </div>
+        </div>
+        <div class="col-md-8 sub-add-to-card">
+            <div class="container">
+                <ul class="nav nav-0  mb-3 pt-5 ps-5 wow bounceInUp" id="pills-tab" role="tablist" data-wow-duration="2s" data-wow-offset="150">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Pizza</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Drinks</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Burgers</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-pasta-tab" data-bs-toggle="pill" data-bs-target="#pills-pasta" type="button" role="tab" aria-controls="pills-pasta" aria-selected="false">Pasta</button>
+                    </li>
+
+                </ul>
+                <div class="tab-content pt-4" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                        <div class="row tab-nav">
+                            @for (int i = 0; i < 3; i++)
+                            {
+                                var item = Model.pizza8[i];
+                                <div class="col-md-4 text-center wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                                    <div class="pizza-img type-1 ms-5 " style="background-image: url('/files/img/@item.ImgName')">
+                                    </div>
+                                    <h3 class="text-white mt-3">@item.Name</h3>
+                                    <p>@item.Description</p>
+                                    <span class="span">@item.Price $</span>
+                                    <div class="mt-4">
+                                        <a href="#" class="button1 btn-add px-3 py-2">Add to card</a>
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                        <div class="row tab-nav">
+                            @foreach (var item in Model.drink)
+                            {
+
+                                <div class="col-md-4 text-center ">
+                                    <div class="pizza-img drink1 ms-5" style="background-image: url('/files/img/@item.ImgName')">
+                                    </div>
+                                    <h3 class="text-white mt-3">@item.Name</h3>
+                                    <p>@item.Description</p>
+                                    <span class="span">@item.Price $</span>
+                                    <div class="mt-4">
+                                        <a href="#" class="button1 btn-add px-3 py-2">Add to card</a>
+                                    </div>
+
+                                </div>
+
+
+                            }
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        <div class="row tab-nav">
+                            @foreach (var item in Model.burger)
+                            {
+                                <div class="col-md-4 text-center ">
+                                    <div class="pizza-img burger1 ms-5 " style="background-image: url('/files/img/@item.ImgName')">
+                                    </div>
+                                    <h3 class="text-white mt-3">@item.Name</h3>
+                                    <p>@item.Description</p>
+                                    <span class="span">@item.Price $</span>
+                                    <div class="mt-4">
+                                        <a href="#" class="button1 btn-add px-3 py-2">Add to card</a>
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-pasta" role="tabpanel" aria-labelledby="pills-pasta-tab" tabindex="0">
+                        <div class="row tab-nav">
+                            @foreach (var item in Model.pasta)
+                            {
+                                <div class="col-md-4 text-center ">
+                                    <div class="pizza-img pasta1 ms-5" style="background-image: url('/files/img/@item.ImgName')">
+                                    </div>
+                                    <h3 class="text-white mt-3">@item.Name</h3>
+                                    <p>@item.Description</p>
+                                    <span class="span">@item.Price $</span>
+                                    <div class="mt-4">
+                                        <a href="#" class="button1 btn-add px-3 py-2">Add to card</a>
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

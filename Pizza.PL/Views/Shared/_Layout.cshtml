@@ -1,50 +1,162 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Pizza.PL</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Pizza.PL.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="pizza1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pizaa</title>
+    <link rel="stylesheet" href="~/web/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/web/vendor/fontawsome/all.min.css">
+    <link rel="stylesheet" href="~/web/assets/css/animate.css">
+ 
+    @RenderSection("style", required: false)
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pizza.PL</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
+    <div class="loading bg-white position-fixed z-3 d-flex justify-content-center align-items-center vh-100 w-100 ">
+        <div class="loader ">
+            <span class="loader"></span>
+        </div>
+    </div>
+    <div class="scroll_to_top opacity-0 invisible position-fixed z-3 rounded-circle d-flex justify-content-center align-items-center ">
+        <i class="fa-solid fa-chevron-up" style="color: #eadedecc;"></i>
+    </div>
+    <nav class="navbar navbar-expand-lg top-0 position-sticky  z-2">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div><img src="~/web/assets/img/pizza project.PNG" class="w-75" /></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars" style="color: #ffffff;"></i> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Service">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Blog" >Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Concat">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+        
+            @RenderBody()
+ 
+    <section class="footer py-5">
+        <div class="container">
+            <div class="footer-content py-5 ">
+                <div class="row justify-content-center align-items-center ">
+                    <div class="col-md-3 pt-3 ABOUT-US">
+                        <h2 class="pb-3">ABOUT US</h2>
+                        <p class="p">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <p class="icon-1 wow bounceInUp" data-wow-duration="2s" data-wow-offset="150">
+                            <a class="pe-3"><i class="fs-4 fa-brands fa-twitter"></i></a>
+                            <a class="pe-3"><i class="fs-4 fa-brands fa-facebook-f"></i></a>
+                            <a><i class="fs-4 fa-brands fa-instagram"></i></a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 pt-4 RECENT-BLOG">
+                        <h2 class="pb-1">RECENT BLOG</h2>
+                        <div class="d-flex gap-4 align-items-center">
+                            <div class="img-blog1"></div>
+                            <div>
+                                <h3><a href="#" class="h3">Even the all-powerful Pointing has<br> no control about</a></h3>
+                                <div class="d-flex recent-blog ">
+                                    <div><a href="#" class="pe-3"><i class="fa-regular fa-calendar-days"></i> Sept 15, 2018</a></div>
+                                    <div><a href="#" class="pe-3"><i class="fa-solid fa-user"></i> Admin</a></div>
+                                    <div><a href="#"><i class="fa-regular fa-message"></i> 19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 align-items-center pt-3">
+                            <div class="img-blog2"></div>
+                            <div>
+                                <h3><a href="#" class="h3">Even the all-powerful Pointing has<br> no control about</a></h3>
+                                <div class="d-flex recent-blog">
+                                    <div><a href="#" class="pe-3"><i class="fa-regular fa-calendar-days"></i> Sept 15, 2018</a></div>
+                                    <div><a href="#" class="pe-3"><i class="fa-solid fa-user"></i> Admin</a></div>
+                                    <div><a href="#"><i class="fa-regular fa-message"></i> 19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 SERVICES">
+                        <h2 class="pb-4">SERVICES</h2>
+                        <ul class="p-0 m-0">
+                            <li class="pt-3"><a href="#">Cooked</a></li>
+                            <li class="pt-3"><a href="#">Deliver</a></li>
+                            <li class="pt-3"><a href="#">Quality Foods</a></li>
+                            <li class="pt-3"><a href="#">Mixed</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 HAVE-A-QUESTIONS">
+                        <h2 class="pb-3">HAVE A QUESTIONS?</h2>
+                        <ul class="p-0 m-0">
+                            <li class="pt-3">
+                                <i class="fa-solid fa-location-dot pe-3 text-white"></i>
+                                <span class="text-color">203 Fake St. Mountain View,<br> San Francisco, California,<br> USA</span>
+                            </li>
+                            <li class="pt-3">
+                                <a href="#">
+                                    <i class="fa-solid fa-phone pe-3"></i>
+                                    <span>+2 392 3929 210</span>
+                                </a>
+                            </li>
+                            <li class="pt-4">
+                                <a href="#">
+                                    <i class="fa-solid fa-envelope pe-3"></i>
+                                    <span>info@yourdomain.com</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cmt-footer py-5">
+                    <p class="text-center pt-5">Copyright &copy;2023 All rights reserved | This template is made with <i class="fa-solid fa-heart"></i> by Tasbeeh Naser</p>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Pizza.PL - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    </section>
+    
+    <script src="~/web/vendor/js/bootstrap.bundle.min.js"></script>
+    <script src="~/web/vendor/js/wow.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+            integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"
+            integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/web/assets/js/js.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+    <script>
+        $('.counter').counterUp({
+            delay: 10,
+            time: 4000
+        });
+    </script>
 </body>
+
 </html>

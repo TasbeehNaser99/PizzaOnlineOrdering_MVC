@@ -12,7 +12,7 @@ namespace Pizza.DAL.Models
         public string Name { get; set; }
         public string Rank { get; set; }
         public string Description { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         public string ImgName { get; set; }
         public bool IsDeleted { get; set; }
 

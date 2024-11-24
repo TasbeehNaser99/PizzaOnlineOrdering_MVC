@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Pizza.DAL.Data;
 using Pizza.DAL.Models;
@@ -7,6 +8,7 @@ using Pizza.PL.Helpers;
 
 namespace Pizza.PL.Areas.dashboard.Controllers
 {
+   [Authorize]
     [Area("dashboard")]
     public class ChefController : Controller
     {

@@ -4,7 +4,6 @@ using Pizza.DAL.Data;
 using Pizza.PL.Mapping;
 using System.Reflection;
 
-
 namespace Pizza.PL
 {
     public class Program
@@ -14,15 +13,34 @@ namespace Pizza.PL
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+                ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            // Configure Identity services
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = true;
+            })
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
+
             builder.Services.AddControllersWithViews();
+
+            // Configure AutoMapper
             builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(MappingProfile)));
+
+            // Configure Identity cookies
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/dashboard/Account/Login"; // Custom login path
+                options.AccessDeniedPath = "/dashboard/Account/AccessDenied"; // Access denied page
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -33,7 +51,6 @@ namespace Pizza.PL
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -42,16 +59,20 @@ namespace Pizza.PL
 
             app.UseRouting();
 
+            // Enable authentication and authorization middleware
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            // Configure route mapping
             app.MapControllerRoute(
-             name: "areas",
-             pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-              );
+                name: "areas",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-           
-            app.MapRazorPages();
+
+            //app.MapRazorPages();
 
             app.Run();
         }
