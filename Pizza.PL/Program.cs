@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Pizza.DAL.Data;
+
 using Pizza.PL.Mapping;
 using System.Reflection;
 
@@ -22,10 +23,12 @@ namespace Pizza.PL
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             // Configure Identity services
-            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
-            {
-                options.SignIn.RequireConfirmedAccount = true;
-            })
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(
+            //    options =>
+            //{
+            //    options.SignIn.RequireConfirmedAccount = true;
+            //}
+            )
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 

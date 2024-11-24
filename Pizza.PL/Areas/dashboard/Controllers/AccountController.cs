@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Pizza.DAL.Models;
 using Pizza.PL.Areas.dashboard.ViewModels.Account;
 namespace Pizza.PL.Areas.dashboard.Controllers
 {
@@ -65,6 +66,7 @@ namespace Pizza.PL.Areas.dashboard.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account", new { area = "dashboard" });
         }
+      
 
     }
 }
